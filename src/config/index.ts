@@ -33,7 +33,12 @@ const config = {
   REQ_PAYLOAD_LIMIT: env('REQ_PAYLOAD_LIMIT', '50mb'),
 
   // DB
-  DB_CONNECTION_STRING: `mongodb://${env('DB_HOST', '127.0.0.1')}:${env('DB_PORT', '27017')}/${env('DB_DATABASE', 'admin')}`
+  DB_CONNECTION_STRING: `mongodb://${env('DB_HOST', '127.0.0.1')}:${env('DB_PORT', '27017')}/${env('DB_DATABASE', 'admin')}`,
+
+
+  // SECURITY
+  JWT_SECRET: env('JWT_SECRET', 'notsosecure'),
+  JWT_EXPIRE_TIME: parseInt(env('JWT_EXPIRE_TIME', '3600')), //seconds
 }
 
 export default config
